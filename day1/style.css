@@ -16,10 +16,12 @@ body {
   display: flex;
   align-items: center;
 }
+
 .container ul {
   display: flex;
   list-style-type: none;
 }
+
 .container ul li {
   display: flex;
   transform: width 1s;
@@ -31,13 +33,16 @@ img {
   border-radius: 5vw;
   width: 5vw;
   object-fit: cover;
+  transition: width 1s;
 }
+
 img:hover {
   cursor: pointer;
 }
 
 .active {
-  width: 100%;
+  width: 30vw;
+  /* width: 100%; */
   transition: width 1s;
 }
 
