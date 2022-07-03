@@ -6,19 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="context"> </div>
-        <button class="open"></button>
-        <button class="close"></button>
+    <div class="container rotate">
+        <div class="context ">
+            <h1>Japan Scenes </h1>
+            <small>Pop</small>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium officiis optio in obcaecati
+                praesentium, labore nisi, illum ex voluptates non deserunt animi voluptatum saepe laudantium
+                exercitationem nihil alias autem minima.</p>
+            <h3>First Scenes</h3>
+            <img src="../image/img1.jpg" alt="img1.jpg">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, sapiente, quis inventore itaque, minus
+                ad eligendi impedit est libero consectetur voluptate? Non, quam alias dignissimos tenetur illum
+                consequuntur eius sapiente.</p>
+        </div>
+        <div class="circle-container">
+            <div class="circle">
+                <button id="open">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <button id="close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+        </div>
+
     </div>
     <nav class="link-container">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Contact</a>
+        <ul>
+            <li><i class="fas fa-home"></i><a href="#">Home</a></li>
+            <li><i class="fas fa-user-alt"></i> <a href="#">About</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="#">Contact</a></li>
+        </ul>
     </nav>
 
 

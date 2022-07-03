@@ -1,8 +1,97 @@
-.root {
-    --cicle-color: rgb(182, 55, 97);
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+
+
+
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #333333;
+    overflow: hidden;
 }
 
 .container {
     display: flex;
+    height: 100vh;
+    justify-content: center;
+    background-color: white;
+    transform-origin: top left;
 
+}
+
+.context {
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 40px 20px;
+}
+
+.context img {
+    max-width: 100%;
+
+}
+
+.circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: #ff7979;
+    position: relative;
+}
+
+.circle button {
+    border: none;
+    font-size: 26px;
+    background-color: inherit;
+    color: white;
+    height: 100px;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+
+.circle button#open {
+    left: 60%;
+}
+
+.circle button#close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.link-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+}
+
+.link-container ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.link-container li {
+    color: white;
+}
+
+/* 点击事件触发后，显示的事件 */
+
+.container.rotate {
+    transform: rotate(-10deg);
+}
+
+.container.rotate .circle {
+    transform: rotate(-80deg);
 }
