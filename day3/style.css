@@ -1,0 +1,8 @@
+.root {
+    --cicle-color: rgb(182, 55, 97);
+}
+
+.container {
+    display: flex;
+
+}
