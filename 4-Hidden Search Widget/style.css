@@ -1,3 +1,6 @@
+/* 样式逻辑：标签压在input上面，从而input存在padding属性时，仅控制width属性就可以进行伸缩 */
+
+/* 如果不使用定位，所有移动时，最终会剩余padding空间 */
 * {
     margin: 0;
     padding: 0;
@@ -6,44 +9,45 @@
 
 body {
     background-color: blueviolet;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.container {
-    display: flex;
+    height: 100vh;
 }
 
 .search {
-    height: 50px;
-    width: 0px;
-
-    overflow: hidden;
     background-color: white;
-    transition: width 1s linear;
+    display: flex;
+    position: relative;
+
 }
 
-.search input {
+.search .input {
+    border: 0;
+    font-size: 18px;
     border-style: none;
     outline-style: none;
-    margin: 15px;
-    font-size: 18px;
-}
 
-.active {
-    width: 200px;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
     transition: width 1s linear;
 }
 
+.search.active .input {
+    width: 200px;
+    /* 使展开的长度足够长 */
+    transform: translateX(-50px);
+}
 
-.container i {
-    background-color: white;
+.search i {
     width: 50px;
     height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
