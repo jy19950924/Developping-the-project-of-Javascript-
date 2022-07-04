@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
 
-
+* {
+    box-sizing: border-box;
+}
 
 html {
     font-size: 20px;
@@ -8,17 +10,19 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     background-color: #333333;
-    overflow: hidden;
 }
 
 .container {
     display: flex;
-    height: 100vh;
+    transform: all 1s;
     justify-content: center;
     background-color: white;
     transform-origin: top left;
-
+    transition: transform 1s linear;
 }
 
 .context {
@@ -29,7 +33,6 @@ body {
 
 .context img {
     max-width: 100%;
-
 }
 
 .circle-container {
@@ -44,6 +47,8 @@ body {
     height: 200px;
     background-color: #ff7979;
     position: relative;
+    /* 使圆盘具有过渡特性 ， 后面旋转时会触发 */
+    transition: transform 1s linear;
 }
 
 .circle button {
@@ -56,6 +61,8 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    cursor: pointer;
+
 }
 
 
@@ -67,31 +74,81 @@ body {
     top: 60%;
     transform: rotate(90deg);
     transform-origin: top left;
+
 }
 
-.link-container {
+/* 链接容器 */
+
+nav {
     position: fixed;
     left: 0;
     bottom: 0;
     background-color: transparent;
+    color: white;
+    margin: 30px;
+    transition: transform 1s linear;
 }
 
-.link-container ul {
+
+nav ul {
     display: flex;
     flex-direction: column;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.link-container li {
+nav i {
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+
+}
+
+nav a {
     color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: #FF7979;
+    font-weight: bold;
+}
+
+nav li {
+    transition: transform 1s linear;
+    transform: translateX(-100%);
+}
+
+nav li+li {
+    margin-left: 10px;
+    transform: translateX(-100%);
+
+}
+
+nav li+li+li {
+    margin-left: 20px;
+    transform: translateX(-100%);
 }
 
 /* 点击事件触发后，显示的事件 */
 
 .container.rotate {
-    transform: rotate(-10deg);
+    transform: rotate(-20deg);
+    transform: all 1s;
+}
+
+.circle-container.rotate .context {
+    overflow: hidden;
+    height: 100vh;
 }
 
 .container.rotate .circle {
     transform: rotate(-80deg);
+}
+
+.container.rotate+nav li {
+    transform: translateX(0px);
+    transition: transform 1s linear;
 }
