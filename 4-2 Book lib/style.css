@@ -56,8 +56,14 @@ body {
     right: 0;
 }
 
-.controller i {
+i:hover {
+    color: grey;
     cursor: pointer;
+}
+
+i:disabled {
+    cursor: not-allowed;
+    color: gainsboro;
 }
 
 .controller i#check {
